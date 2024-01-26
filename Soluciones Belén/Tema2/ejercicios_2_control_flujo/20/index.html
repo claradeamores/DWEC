@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    let salario = Number(prompt("Introduzca su salario"));
+    let antiguo = prompt("Introduzca su antigüedad");
+
+    if (salario < 500 && antiguo >= 10) {
+      salario *= 1.2; // salario + 20%
+    } else if (salario < 500 && antiguo < 10) {
+      salario *= 1.05;
+    }
+    salario = salario.toFixed(2);
+    document.write(
+      `<p>Persona: Antigüedad: ${antiguo}, salario: ${salario} ,fin </p>`
+    );
+  </script>
+
+  <body></body>
+</html>

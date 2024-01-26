@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let mundo = "Hola Mundo";
+
+      console.log("Primera coincidencia: " + mundo.indexOf("Mundo"));
+
+      mundo = mundo.replace("Mundo", "Universo");
+      console.log("Sustituyo Mundo: " + mundo);
+      //console.log("Sustituyo Mundo: " + mundo.replace("Mundo", "Universo"));
+
+      console.log("Mayúsculas: " + mundo.toUpperCase());
+      console.log("Minúsculas: " + mundo.toLowerCase());
+
+      let nombre = "Nombre";
+      let apellidos = "Apellidos";
+      console.log("Nombre completo: " + nombre + " " + apellidos);
+
+      let palabra = "Cliente";
+      console.log("Cli: " + palabra.substring(0, 3));
+
+      console.log("ente: " + palabra.substring(palabra.length - 4));
+    </script>
+  </head>
+  <body></body>
+</html>

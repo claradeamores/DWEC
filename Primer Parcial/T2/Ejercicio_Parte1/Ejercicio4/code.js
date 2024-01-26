@@ -1,0 +1,12 @@
+let txt = "Hola Mundo";
+console.log(txt.indexOf("Mundo"));
+console.log(txt.replace("Mundo", "Universo"));
+console.log(txt.toUpperCase());
+console.log(txt.toLowerCase());
+let nombre = "Clara";
+let apellidos = "de Amores Cuaresma";
+console.log(`${nombre} ${apellidos}`);
+let palabra = "Cliente";
+console.log(palabra.substring(0, 3));
+console.log(palabra.substring(3));
+console.log(palabra.substring(palabra.length - 4));

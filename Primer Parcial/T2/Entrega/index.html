@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Carrera</title>
+</head>
+
+<body>
+    <form name="form1">
+
+        <div>
+            <button type="submit" value="COMENZAR" class="comenzar" name="comenzar"
+                onclick="empezar()">COMENZAR</button>
+        </div>
+        <div class="div1">
+
+            <button type="submit" value="A CORRER!" class="correr" name="correr" onclick="aCorrer()">A
+                CORRER!</button>
+            <button type="submit" value="empate" class="empate" name="empate" onclick="iguales()">EMPATE</button>
+            <input type="button" id="parar" value="STOP" class="parar" name="parar" onclick="stop()">STOP</input>
+        </div>
+        <div class="fondoTigres" id="fondoTigres">
+            <img name="segundo" id="p2" class="img1" value="segundo" src="./img/tigre.gif">
+            <img name="primero" id="p1" class="img2" value="primero" src="./img/tigre.gif">
+        </div>
+    </form>
+    <script type="text/javascript" src="./js/code.js"></script>
+</body>
+
+
+</html>

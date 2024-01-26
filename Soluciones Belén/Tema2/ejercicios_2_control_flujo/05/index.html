@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    document.write("<h2> Empieza la cuenta con while <br> </h2>");
+
+    let i = 0;
+    while (i <= 100) {
+      document.write(i);
+      document.write("<br>");
+      i += 2;
+    }
+
+    // con do while
+    document.write("<h2>Empieza la cuenta con do while <br></h2>");
+    i = 0;
+    do {
+      document.write(i);
+      document.write("<br>");
+      i += 2;
+    } while (i <= 100);
+
+    // con for
+    document.write("<h2>Empieza la cuenta con for <br></h2>");
+
+    for (i = 0; i <= 100; i += 2) {
+      document.write(i);
+      document.write("<br>");
+    }
+  </script>
+  <body></body>
+</html>

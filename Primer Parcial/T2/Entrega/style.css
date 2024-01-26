@@ -1,0 +1,60 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url(./img/selva-tropical.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.fondoTigres {
+  margin-top: 15%;
+}
+button {
+  border-radius: 10%;
+  border-style: groove;
+  border-collapse: separate;
+  border-width: 20px;
+}
+
+.img1 {
+  position: absolute;
+  width: 500px;
+}
+.img2 {
+  position: relative;
+  margin-top: 220px;
+  width: 500px;
+}
+.comenzar {
+  margin-top: 2%;
+  margin-left: 48.5%;
+  margin-bottom: 2%;
+  font-size: 20pt;
+  background-color: yellow;
+  border-color: rgba(255, 255, 0, 0.296);
+  position: relative;
+  padding: 10px;
+}
+.div1 {
+  display: flex;
+  align-content: space-around;
+  margin-left: 35%;
+}
+.correr {
+  font-size: 30px;
+  padding: 10px;
+  background-color: blueviolet;
+  border-color: rgba(137, 43, 226, 0.246);
+}
+.empate {
+  font-size: 30px;
+  padding: 10px;
+  background-color: blue;
+  margin-left: 8%;
+  border-color: rgba(0, 0, 255, 0.334);
+}
+.parar {
+  font-size: 30px;
+  padding: 10px;
+  background-color: red;
+  margin-left: 8%;
+  border-color: rgba(255, 0, 0, 0.258);
+}

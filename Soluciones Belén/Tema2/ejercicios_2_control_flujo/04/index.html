@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    let motor = window.prompt("Introduzca tipo de motor (0-4)");
+
+    if (isNaN(parseInt(motor))) {
+      alert("Debe ser un número");
+    } else if (parseInt(motor) < 0 || parseInt(motor) > 4) {
+      alert(
+        "No existe un valor valido para tipo de bomba. Debe estar comprendido entre 0 y 4"
+      );
+    } else {
+      // CON IF ELSE
+      /*
+      if (motor == 0)
+        document.write(
+          "No hay establecido un valor definido para el tipo de bomba"
+        );
+      else if (motor == 1) document.write("La bomba es una bomba de agua");
+      else if (motor == 2) document.write("La bomba es una bomba de gasolina");
+      else if (motor == 3) document.write("La bomba es una bomba de hormigón");
+      else if (motor == 4)
+        document.write("La bomba es una bomba de pasta alimenticia");
+    }
+    */
+      // CON SWITCH
+      switch (motor) {
+        case "0":
+          document.write(
+            "No hay establecido un valor definido para el tipo de bomba"
+          );
+          break;
+        case "1":
+          document.write("La bomba es una bomba de agua");
+          break;
+        case "2":
+          document.write("La bomba es una bomba de gasolina");
+          break;
+        case "3":
+          document.write("La bomba es una bomba de hormigón");
+          break;
+        case "4":
+          document.write("La bomba es una bomba de pasta alimenticia");
+          break;
+      }
+    }
+  </script>
+  <body></body>
+</html>
