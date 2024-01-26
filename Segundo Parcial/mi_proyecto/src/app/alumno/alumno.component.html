@@ -1,0 +1,16 @@
+<h1>{{titulo}}</h1>
+<p>Nombre: {{nombre}}</p>
+<p>Apellidos: {{apellido}}</p>
+<p>Edad: {{edad}}</p>
+<p>DNI: {{dni}}</p>
+<p>Edad x 5: {{edad*5}}</p>
+<p>{{ edad >= 18 ? "Es mayor de edad" : "Es menor de edad" }}</p>
+<p>Introducir DNI:</p>
+<input type="text" #nuevoDni (keyup)="(0)">
+<p>DNI: {{nuevoDni.value}}</p>
+CheckBox 2: <input type="checkbox" [checked]='edad <= 18 '><br>
+Pulsar: <input type="checkbox" [checked]="checkBoxMarcado" (click)="mostrarMensaje()"> {{texto}} <br>
+Hombre:
+<input type="radio" name="sexo" value="H" (click)="marcado($event)">
+Mujer:
+<input type="radio" name="sexo" value="M" (click)="marcado($event)"><br>

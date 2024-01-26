@@ -1,0 +1,13 @@
+<p>Datos del Libro</p>
+<ul>
+  <li>Nombre: {{ libro.titulo }}</li>
+  <li>Autor: {{ libro.autor }}</li>
+  <li>Precio: {{ libro.precio }}</li>
+  <li [class.aviso]="libro.stock == 0">Stock: {{ libro.stock }}</li>
+  <li>Cantidad: {{ libro.cantidad }}</li>
+  <li>Imagen: <img [src]="libro.imagen" alt="" /></li>
+</ul>
+<button (click)="up()">AÑADIR</button>
+<button (click)="down()" [disabled]="libro.cantidad == 0">QUITAR</button>
+<br>
+<input type="text" [(ngModel)]="libro.cantidad">

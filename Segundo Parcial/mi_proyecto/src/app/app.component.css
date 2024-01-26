@@ -1,0 +1,20 @@
+.azul {
+  color: blue;
+}
+
+img {
+  width: 150px;
+  height: auto;
+}
+
+.naranja {
+  color: orange;
+}
+
+.fondo {
+  background: yellow;
+}
+table, td, tr{
+  border-collapse: collapse;
+  border: 2px solid black;
+}

@@ -1,0 +1,61 @@
+<h1 style="color: red; font-weight: bold">Mi primera aplicacion Angular</h1>
+<h1 class="azul">Mi primera aplicacion Angular.</h1>
+<p>¡¡¡¡Hola!!! Me llamo Clara</p>
+
+{{ title }}
+
+<h3>{{ nombre }}</h3>
+
+<p>{{ getEdad() >= 18 ? "Es mayor de edad" : "Es menor de edad" }}</p>
+<hr>
+<app-user-profile></app-user-profile>
+<p>Hola esta es la imagen {{name}}</p>
+<p [class]="clase">{{nombre}}</p>
+<img [src]="imgUrl">
+<br>
+Checkbox: <input type="checkbox" [checked]="marcado">
+<br>
+<input type="text" [value]="nombre" [disabled]="deshabilitado">
+<p>Datos de la Asignatura:</p>
+<div>
+  Nombre: {{asignatura.nombre}}
+</div>
+<div>
+  Código: {{asignatura.codigo}}
+</div>
+<app-alumno></app-alumno>
+<button (click)="mostrarCompi($event)">Mostrar Compañero</button>
+<input type="text" [value]='compi'><br><br>
+<input type="text" (keyup)="mostrar($event)">
+<p>{{key}}</p>
+<hr>
+¿Marcado? <input type="checkbox" (change)="mostrarMarcado($event)">
+<p>{{fraseCheck}}</p>
+<hr>
+<input type="text" [(ngModel)]="nombre">
+<p>El nombre es: {{ nombre }} </p>
+<hr>
+<input type="text" [(ngModel)]="texto1" (keyup)="cambiarM($event)">
+<input type="text" [(ngModel)]="texto2" (keyup)="cambiarm($event)">
+<table>
+  <tr>
+    <td><input type="checkbox" name="" id="" (click)="cambiarEstilo($event)"></td>
+    <td>
+      <div>{{hola}}</div>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<hr>
+<app-datos-libro></app-datos-libro>
