@@ -1,0 +1,143 @@
+<h1 style="color: red">Mi primera aplicación angular con estilo</h1>
+
+<h1 class="rojo">Mi primera aplicación angular</h1>
+
+<p>Hola, buenas tardes! Mi nombre es {{ name }}</p>
+
+<img src="./assets/imagen.jpg" />
+
+<h2>Título: {{ title }}</h2>
+<hr />
+<app-user-profile></app-user-profile>
+
+<hr />
+Imagen1: <img src="{{ imgUrl }}" /> <br />
+Imagen2: <img [src]="imgUrl" />
+<p [class]="naranja">Hola, buenas tardes! Mi nombre es {{ name }}</p>
+<hr />
+Javascript <input type="checkbox" [checked]="marcado" />
+<br />
+<input type="input" [value]="name" [disabled]="deshabilitado" />
+<br />
+<hr />
+Datos del registro asignatura:
+<div>Nombre: {{ asignatura.nombre }}</div>
+<div>Código: {{ asignatura.codigo }}</div>
+<hr />
+
+<app-alunmno></app-alunmno>
+
+<br />
+<button (click)="setName()">Compi</button>
+<input type="text" value="{{ compi }}" />
+
+<br />
+<hr />
+Introduzca valor:
+<input type="text" (keyup)="mostrar($event)" />
+
+<p>{{ key }}</p>
+
+<br />
+<hr />
+¿Marcado?<input type="checkbox" (change)="mostrarMarcado($event)" />
+<p>{{ fraseCheck }}</p>
+
+<br />
+<hr />
+
+Escribimos algo con one way binding
+<input type="text" [value]="texto" (keyup)="capturar($event)" />
+<br />
+<div>
+  {{ texto }}
+</div>
+
+Escribimos algo con Two way data binding , vamos a combinar las dos juntas con
+[(ngModel)]
+<input type="text" [(ngModel)]="texto" /> <br />
+<div>
+  {{ texto }}
+</div>
+
+<hr />
+<input type="text" [(ngModel)]="texto1" (keyup)="cambiarM($event)" /> <br />
+<input type="text" [(ngModel)]="texto2" (keyup)="cambiarm($event)" /> <br />
+
+<br />
+<hr />
+
+<table>
+  <tr>
+    <td><input type="checkbox" [(ngModel)]="conFondo" /></td>
+    <td><div [class.fondo]="conFondo">Hola</div></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <a [href]="atribHref" target="_blank">
+        Pulsa en enlace, ¿A dónde redirige?</a
+      >
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="cambiarValor()">
+        {{ mostrarCapa ? "Mostrar" : "Ocultar" }}
+      </button>
+    </td>
+    <td>
+      <div [hidden]="mostrarCapa">Visible</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="habilitaBoton = !habilitaBoton">
+        {{ habilitaBoton ? "Habilitar" : "Deshabilitar" }}
+      </button>
+    </td>
+    <td>
+      <button [disabled]="habilitaBoton">Hola que tal</button>
+    </td>
+  </tr>
+</table>
+
+<input type="radio" name="gender" [(ngModel)]="gender" value="Male" /> Male
+<input type="radio" name="gender" [(ngModel)]="gender" value="Female" /> Female
+<br />
+<hr />
+
+<app-datos-libro></app-datos-libro>
+
+<hr />
+<h1>Paso de parametros</h1>
+<app-user-profile
+  name="Harry Potter"
+  rol="Mago"
+  (selected)="seleccionarPadre($event)"
+></app-user-profile>
+<app-user-profile
+  name="Frodo Bolson"
+  rol="Mago"
+  (selected)="seleccionarPadre($event)"
+></app-user-profile>
+<p>He pulsado: {{ valorHijo }}</p>
+
+<hr />
+Prueba de paso de parametros con componente libro:
+<input type="text" [(ngModel)]="numLibro" />
+<app-datos-libro
+  numLibro="{{ numLibro }}"
+  (selected)="mostrarTitulo($event)"
+></app-datos-libro>
+{{ tituloLibro }}
+
+<hr />
+
+Prueba de paso de parametros CON OBJETO LIBRO:
+<input type="text" [(ngModel)]="numLibro" />
+<app-datos-libro
+  [numLibro]="numLibro"
+  (selected)="mostrarTitulo($event)"
+  (selected2)="mostrarTitulo2($event)"
+></app-datos-libro>
+{{ tituloLibro }}

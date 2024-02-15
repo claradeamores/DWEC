@@ -1,0 +1,72 @@
+<h1>{{ titulo }}</h1>
+
+<div class="container">
+  <form class="form-group row">
+    <!-- para que aparezcan en fila -->
+
+    <div class="form-group col-md-3">
+      <!-- cada comp en una columna.  -->
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        name="nombre"
+        id="nombre"
+        placeholder="Nombre"
+        class="form-control"
+        [(ngModel)]="inputNombre"
+      />
+    </div>
+
+    <div class="form-group col-md-3">
+      <!-- cada comp en una columna.  -->
+      <label for="nombre">Precio:</label>
+      <input
+        type="text"
+        name="precio"
+        id="precio"
+        placeholder="Precio"
+        class="form-control"
+        [(ngModel)]="inputPrecio"
+      />
+    </div>
+
+    <div class="form-group col-md-3">
+      <!-- cada comp en una columna.  -->
+      <label for="nombre">Unidades:</label>
+      <input
+        type="text"
+        name="unidades"
+        id="unidades"
+        placeholder="Unidades"
+        class="form-control"
+        [(ngModel)]="inputUnidades"
+      />
+    </div>
+
+    <div class="col">
+      <button type="submit" class="btn btn-primary" (click)="comprar()">
+        Comprar
+      </button>
+    </div>
+  </form>
+</div>
+
+<br /><br />
+
+<!--
+<div class="container" style="background-color: aquamarine">
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let item of articulos; let i = index">
+        {{ i + 1 }} - {{ item.nombre }} - {{ item.precio }}- {{ item.unidades }}
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<app-listado-articulos
+  *ngFor="let item of articulos; let i = index"
+  [articuloIndividual]="item"
+  [indice]="i"
+></app-listado-articulos>

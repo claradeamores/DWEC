@@ -1,0 +1,122 @@
+<!--
+<div class="container mt-4">
+  <h2>{{ title }}</h2>
+  <form>
+    <div class="form-group">
+      <label for="nombreInput">Nombre:</label>
+      <input
+        type="text"
+        id="nombreInput"
+        class="form-control"
+        [(ngModel)]="nombre"
+        name="nombre"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="apellidos">Apellidos:</label>
+      <input
+        type="text"
+        id="apellidos"
+        class="form-control"
+        [(ngModel)]="apellidos"
+        name="apellidos"
+        required
+      />
+    </div>
+    <button class="btn btn-primary" (click)="registrar()">Alta</button>
+    <p *ngIf="alta">{{ mensaje }}</p> 
+
+    <p *ngIf="alta; else sinAlta">{{ mensaje }}</p>
+    <ng-template #sinAlta>
+      <p>Ninguna alta</p>
+    </ng-template>
+  </form>
+</div>
+
+<hr />
+<div class="container mt-4">
+  <ul>
+    <li style="font-weight: bold" *ngFor="let p of personas; let i = index">
+      <p>{{ i + 1 }}</p>
+      <p>Nombre: {{ p.nombre }}</p>
+      <p>Apellidos:{{ p.apellidos }}</p>
+      <p>Edad:{{ p.edad }}</p>
+    </li>
+  </ul>
+</div>
+<div class="container mt-4">
+  <h2>Solo los mayores de 30</h2>
+  <ul>
+    <li *ngFor="let p of personas">
+      <div *ngIf="p.edad >= 30">
+        <p>Nombre: {{ p.nombre }}</p>
+        <p>Apellidos:{{ p.apellidos }}</p>
+        <p>Edad:{{ p.edad }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="container mt-4">
+  <h2>Solo los mayores de 30 - otra forma</h2>
+  <ul>
+    <li *ngFor="let p of personaMayor">
+      <p>Nombre: {{ p.nombre }}</p>
+      <p>Apellidos:{{ p.apellidos }}</p>
+      <p>Edad:{{ p.edad }}</p>
+    </li>
+  </ul>
+</div>
+
+<h2>Con Switch</h2>
+<div>
+  <div class="container bg" [ngSwitch]="opcion">
+    Valor seleccionado:
+    <div class="container text-success" *ngSwitchCase="'A'">
+      Ha elegido la opcion: <b>A</b>
+    </div>
+    <div class="container text-success" *ngSwitchCase="'B'">
+      Ha elegido la opcion: <b>B</b>
+    </div>
+    <div class="container text-success" *ngSwitchCase="'C'">
+      Ha elegido la opcion: <b>C</b>
+    </div>
+    <div class="container text-danger" *ngSwitchDefault>
+      <b>Sin selección</b>
+    </div>
+  </div>
+  <br />
+</div>
+
+<div class="container">
+  <button class="btn btn-primary btn-lg" (click)="opcion = 'A'">A</button>
+  <button class="btn btn-primary btn-md" (click)="opcion = 'B'">B</button>
+  <button class="btn btn-primary btn-sm" (click)="opcion = 'C'">C</button>
+</div>
+
+<div class="container">
+  <button class="btn btn-primary btn-lg" (click)="marcar($event)">A</button>
+  <button class="btn btn-primary btn-md" (click)="marcar($event)">B</button>
+  <button class="btn btn-primary btn-sm" (click)="marcar($event)">C</button>
+</div>
+Hemos pulsado: {{ opcion }}
+
+<hr />
+-->
+<div style="background-color: aqua">
+  <app-articulo></app-articulo>
+</div>
+<hr />
+
+<div>
+  <h2>Listado de personas</h2>
+  <app-listado-personas
+    *ngFor="let p of personas"
+    [persona]="p"
+    (selected)="mostrarPersona($event)"
+  ></app-listado-personas>
+
+  <div *ngIf="per.nombre != ''">
+    Ha pulsado {{ per.nombre }} {{ per.apellidos }}
+  </div>
+</div>

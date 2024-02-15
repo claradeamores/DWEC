@@ -1,0 +1,9 @@
+<h1>Libros Component</h1>
+<p>Libro</p>
+<ul>
+  <li><img [src]="libro.imagen" alt=""></li>
+  <li>Autor: {{libro.autor}}</li>
+  <li>Título: {{libro.titulo}}</li>
+  <li>Precio: {{libro.precio}}</li>
+  <li [class.aviso]="libro.stock==0">Stock: {{libro.stock}}</li>
+</ul>

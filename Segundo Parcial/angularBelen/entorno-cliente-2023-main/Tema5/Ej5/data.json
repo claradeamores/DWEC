@@ -1,0 +1,29 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "grades": [8, 9, 7, 7]
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "grades": [9, 8, 9, 6]
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "grades": [6, 8, 3, 9]
+    },
+    {
+      "id": 4,
+      "name": "David",
+      "grades": [4, 5, 6, 7]
+    },
+    {
+      "id": 5,
+      "name": "Eva",
+      "grades": [8, 9, 8, 8]
+    }
+  ]
+}

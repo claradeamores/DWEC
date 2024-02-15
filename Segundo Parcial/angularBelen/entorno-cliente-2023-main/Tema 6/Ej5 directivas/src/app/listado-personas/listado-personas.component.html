@@ -1,0 +1,38 @@
+<!--<p>listado-personas works!</p>-->
+
+<div>
+  <span class="nombre">{{ persona.nombre }}</span>
+  <span class="apellidos"> {{ persona.apellidos }}</span>
+  <span class="edad"> {{ persona.edad }} </span>
+  <!--<span
+    [class.aviso]="persona.edad < 18"
+    *ngIf="persona.edad < 18; else otraRama" > - Menor de edad
+  </span>-->
+
+  <!--
+  <span [class.aviso]="persona.edad < 18" *ngIf="esMenor(); else otraRama">
+    - Menor de edad</span
+  >-->
+  <!--
+  <span
+    [ngStyle]="{ color: persona.edad < 18 ? 'red' : 'black' }"
+    *ngIf="esMenor(); else otraRama"
+  >
+    - Menor de edad</span
+  >-->
+
+  <span
+    [ngClass]="{ estiloMenor: persona.edad < 18 }"
+    *ngIf="esMenor(); else otraRama"
+  >
+    - Menor de edad</span
+  >
+
+  <input type="radio" name="radioP" (click)="marcarPersona()" />
+</div>
+
+<ng-template #otraRama> - Mayor de edad </ng-template>
+
+<input [(ngModel)]="persona.nombre" placeholder="Nombre" />
+<input [(ngModel)]="persona.apellidos" placeholder="Apellidos" />
+<input [(ngModel)]="persona.edad" placeholder="Edad" />

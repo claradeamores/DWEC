@@ -1,0 +1,29 @@
+<p>DATOS DEL COMPONENTE LIBRO</p>
+
+<ul>
+  <li>Titulo:{{ libro.titulo }}</li>
+  <li>Autor:{{ libro.autor }}</li>
+  <li [class.aviso]="libro.stock == 0">
+    Unidades disponibles:{{ libro.stock }}
+  </li>
+  <li>Precio:{{ libro.precio }}</li>
+  <li>Imagen: <img [src]="libro.imagen" (mousemove)="coord($event)" /></li>
+</ul>
+
+<div>
+  <button (click)="up()">Añadir</button>
+  {{ libro.cantidad }}
+  <button (click)="down()" [disabled]="libro.cantidad == 0">Quitar</button>
+</div>
+
+<div>
+  <button (click)="up()">Añadir</button>
+  <input type="text" [(ngModel)]="libro.cantidad" />
+  <button (click)="down()" [disabled]="libro.cantidad == 0">Quitar</button>
+</div>
+
+<button (click)="devolverTitulo()">Quiero el libro {{ numLibro }}</button>
+<br />
+<button (click)="devolverTitulo2()">
+  CON OBJETO LIBRO: quiero el libro {{ numLibro }}
+</button>

@@ -1,0 +1,17 @@
+<div *ngIf="usuario$ | async as usuario">
+  <h2>{{ usuario.name }}</h2>
+  <p><strong>Nombre de usuario:</strong> {{ usuario.username }}</p>
+  <p><strong>Correo electrónico:</strong> {{ usuario.email }}</p>
+
+  <h3>Empresa:</h3>
+  <p><strong>Nombre:</strong> {{ usuario.company.name }}</p>
+  <p><strong>Eslogan:</strong> {{ usuario.company.catchPhrase }}</p>
+  <p><strong>Servicios:</strong> {{ usuario.company.bs }}</p>
+
+  <h3>Dirección:</h3>
+  <p><strong>Calle:</strong> {{ usuario.address.street }}</p>
+  <p><strong>Suite:</strong> {{ usuario.address.suite }}</p>
+  <p><strong>Ciudad:</strong> {{ usuario.address.city }}</p>
+
+  <button class="btn btn-primary" routerLink="/usuarios">Atrás</button>
+</div>

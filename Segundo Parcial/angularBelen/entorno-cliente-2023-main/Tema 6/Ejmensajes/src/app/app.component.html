@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Título: {{ title }}</h1>
+</div>
+
+<div class="container mt-4">
+  <h2>Componente padre</h2>
+  <label for="mensajeInput">Mensaje:</label>
+
+  <textarea
+    #tx
+    id="mensajeInput"
+    [(ngModel)]="mensajePadre"
+    class="form-control"
+    rows="3"
+  ></textarea>
+
+  <!-- SI QUISIERA HACERLO CON UN BOTÓN NO TENDRIA NGMODEL -->
+  <!-- <button (click)="sendChild(tx.value)">Enviar al hijo</button> -->
+
+  <p class="mt-3">Respuesta del Hijo: {{ respuestaHijo }}</p>
+
+  <app-mensaje-hijo
+    [mensajeHijo]="mensajePadre"
+    (selected)="mostrarRespuesta($event)"
+  ></app-mensaje-hijo>
+</div>

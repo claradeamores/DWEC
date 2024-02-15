@@ -1,0 +1,15 @@
+<div class="mt-4">
+  <h3>Componente Hijo</h3>
+  <p>{{ mensajeHijo }}</p>
+  <label for="respuestaInput">Respuesta:</label>
+  <textarea
+    id="respuestaInput"
+    [(ngModel)]="respuesta"
+    class="form-control"
+    rows="3"
+  ></textarea>
+
+  <button class="btn btn-success mt-2" (click)="enviarRespuesta()">
+    Enviar Respuesta al Padre
+  </button>
+</div>

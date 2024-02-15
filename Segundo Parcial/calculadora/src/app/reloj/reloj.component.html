@@ -1,0 +1,14 @@
+<div class="contenedor">
+  <div class="num">
+    <p>Numero 1: <input [(ngModel)]="numa" type="number"></p>
+    <p>Número 2: <input [(ngModel)]="numb" type="number"></p>
+  </div>
+  <p class="resultado">Resultado: <input type="text" [(ngModel)]="res"></p>
+  <div class="botones">
+    <button (click)="suma()">SUMAR</button>
+    <button (click)="resta()">RESTAR</button>
+    <button (click)="mult()">MULTIPLICAR</button>
+    <button (click)="div()">DIVIDIR</button>
+    <button (click)="reset()">RESET</button>
+  </div>
+</div>

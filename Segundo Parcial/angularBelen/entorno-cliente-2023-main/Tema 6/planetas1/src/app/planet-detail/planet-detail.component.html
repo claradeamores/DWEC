@@ -1,0 +1,17 @@
+<p>planet-detail works!</p>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Detalles del Planeta 1</h2>
+
+  <dl class="row">
+    <dt class="col-sm-3">Nombre:</dt>
+    <dd class="col-sm-9">{{ (planeta$ | async)?.name }}</dd>
+
+    <dt class="col-sm-3">Periodo de Rotación:</dt>
+    <dd class="col-sm-9">{{ (planeta$ | async)?.rotation_period }}</dd>
+
+    <dt class="col-sm-3">Periodo Orbital:</dt>
+    <dd class="col-sm-9">{{ (planeta$ | async)?.orbital_period }}</dd>
+
+    <!-- Agrega más detalles según sea necesario -->
+  </dl>
+</div>

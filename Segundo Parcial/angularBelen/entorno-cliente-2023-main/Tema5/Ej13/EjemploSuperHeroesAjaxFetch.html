@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+      <header id="header">
+      </header>
+      <section id="section">
+      </section>
+  </body>    
+    <script>
+
+carga = ()=>{
+
+  fetch("https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json")
+.then((res) => (res.ok ? res.json() : Promise.reject(res))) // pasamos a json si no, rechazamos la respuesta
+.then((json) => {
+  populateHeader(json);
+  populateHeroes(json);
+
+  })
+.catch((err) => {
+  console.log(err);
+  document.write("Error: " + err.statusText);
+  //let message = err.statusText || "Ocurrió un error";
+  
+})
+
+}
+
+ populateHeader=(obj) =>{
+      const header = document.getElementById('header');
+      const myH1 = document.createElement('h1');
+      myH1.innerHTML = obj.squadName; //Nombre del equipo
+      header.appendChild(myH1);
+
+      const myPara = document.createElement('p');
+      myPara.innerHTML = `Ciudad: ${obj.homeTown} - Creada: ${obj.formed}`;
+      header.appendChild(myPara);
+    }
+
+ populateHeroes=(obj)=> {
+      const section = document.getElementById('section');
+      const heroes = obj.members;
+
+      for (const hero of heroes) {
+        const myArticle = document.createElement('div');
+        const myH2 = document.createElement('h2'); //nombre del heroe
+        const myPara1 = document.createElement('p'); //identidad secreta
+        const myPara2 = document.createElement('p'); // edad
+        const myPara3 = document.createElement('p'); //lista de superpoderes
+        const myList = document.createElement('ul');
+
+        myH2.innerHTML = hero.name;
+        myPara1.innerHTML = `Identidad secreta: ${hero.secretIdentity}`;
+        myPara2.innerHTML = `Edad: ${hero.age}`;
+        myPara3.innerHTML = 'Super poderes:';
+
+        $fragment = document.createDocumentFragment();
+        const superPowers = hero.powers;
+        for (const power of superPowers) {
+          const listItem = document.createElement('li');
+          listItem.innerHTML = power;
+          $fragment.appendChild(listItem);
+
+        }
+
+        myList.appendChild($fragment);
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        myArticle.appendChild(myList);
+
+        section.appendChild(myArticle);
+      }
+    }
+    
+    window.addEventListener("load", carga);
+    </script>
+  </body>
+</html>

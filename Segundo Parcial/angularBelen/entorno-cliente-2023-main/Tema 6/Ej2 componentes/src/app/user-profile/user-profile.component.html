@@ -1,0 +1,19 @@
+<h1>{{ titulo }}</h1>
+<!--<h1 [innerHTML]="titulo"></h1> -->
+
+<input type="text" [disabled]="isDisabled" />
+<!--
+<div class="comp-user">
+  <p class="name">Jessica Alba</p>
+  <p class="role">(Administradora)</p>
+</div>
+-->
+
+<div class="comp-user">
+  <p class="name">{{ name }}</p>
+  <p class="role">{{ role }}</p>
+
+  <button (click)="seleccionar()">Pulsar</button>
+</div>
+
+<input type="text" [value]="name" />

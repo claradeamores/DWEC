@@ -1,0 +1,25 @@
+<h1>{{ title }}</h1>
+<p>NOmbre: {{ nombre }}</p>
+<p>Apellidos: {{ apellidos }}</p>
+<p>Edad: {{ edad }} {{ edad >= 18 ? "Mayor de edad" : "Menor de edad" }}</p>
+
+<p>DNI: {{ dni }}</p>
+<p>Edad multiplicada x 5: {{ edad * 5 }}</p>
+
+Introducir DNI
+<input type="text" #nuevoDni (keyup)="(0)" />
+<input type="text" #nuevoDni (keyup)="(0)" [disabled]="deshabilitado" />
+<p>DNI: {{ nuevoDni.value }}</p>
+
+Menor:
+<input type="checkbox" [checked]="this.edad <= 18" />
+
+Pulsar:
+<input type="checkbox" [checked]="check2Marcado" (click)="mostrarMensaje()" />
+
+<p>{{ texto }}</p>
+
+Hombre:
+<input type="radio" name="sexo" value="H" (click)="marcado($event)" />
+Mujer:<input type="radio" name="sexo" value="M" (click)="marcado($event)" />
+<hr />

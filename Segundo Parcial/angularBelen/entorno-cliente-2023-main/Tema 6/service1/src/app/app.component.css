@@ -1,0 +1,10 @@
+.custom-list-item {
+  background-color: #3498db; /* Color de fondo */
+  color: #ffffff; /* Color del texto */
+  border: 1px solid #2980b9; /* Color del borde */
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+.custom-list-item:hover {
+  background-color: #2980b9; /* Cambia el color al pasar el mouse */
+}

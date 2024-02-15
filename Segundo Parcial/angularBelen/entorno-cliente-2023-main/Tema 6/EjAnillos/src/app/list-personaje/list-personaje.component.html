@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Listado de Personajes</h2>
+  <ul class="list-group">
+    <li
+      *ngFor="let personaje of personajes"
+      class="list-group-item d-flex justify-content-between align-items-center"
+    >
+      {{ personaje.nombre }} - {{ personaje.raza }}
+      <button class="btn btn-danger" (click)="eliminarPersonaje(personaje.id)">
+        Eliminar
+      </button>
+    </li>
+  </ul>
+</div>

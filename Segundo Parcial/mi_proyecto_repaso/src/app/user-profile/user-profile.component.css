@@ -1,0 +1,21 @@
+.comp-user{
+  border: 1px solid black;
+  padding: 2em;
+  margin: 1em;
+  width: 20em;
+}
+.name{
+  font-weight: bold;
+  color: rgb(60, 60, 181);
+}
+
+.role{
+  font-style: italic;
+}
+h1{
+ color: purple;
+}
+.fondo{
+  background-color: yellow;
+}
+

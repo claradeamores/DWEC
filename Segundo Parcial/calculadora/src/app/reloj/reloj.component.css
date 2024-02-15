@@ -1,0 +1,38 @@
+
+.contenedor{
+  margin: auto;
+  background-color: #68794a;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-bottom: 1em;
+}
+.num{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.botones{
+  display: flex;
+  justify-content: space-evenly;
+
+}
+button{
+  background-color: #8e997a;
+  color: white;
+  border: white 1px solid;
+  border-radius: 75px;
+  padding: 1em;
+  box-shadow: none;
+  cursor: pointer;
+}
+button:hover{
+  background-color: white;
+  color: #8e997a;
+  border: #8e997a 1px solid;
+}
+.resultado{
+  margin-left: 26%;
+}
+
