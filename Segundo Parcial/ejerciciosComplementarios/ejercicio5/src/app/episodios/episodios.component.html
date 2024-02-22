@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>{{ title }}</h1>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center w-75 mx-auto text-center">
+    <ng-container *ngFor="let episodio of (epidosios | async)?.results">
+      <div class="col-md-4 mb-1">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title text-warning">{{ episodio.name }}</h5>
+            <p class="card-text"><strong>Id:</strong> {{ episodio.id }}</p>
+            <p class="card-text"><strong>Episodio:</strong> {{ episodio.episode }}</p>
+            <p class="card-text"><strong>Personajes:</strong> {{ episodio.characters.length }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

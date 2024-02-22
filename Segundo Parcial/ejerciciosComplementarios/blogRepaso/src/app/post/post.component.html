@@ -1,0 +1,15 @@
+<div class="container mx-auto w-75 mt3 text-center">
+  <h1>POSTS</h1>
+  <button class="btn btn-warning p-2 fs-4" (click)="mostrarPost()">ENVIAR</button>
+  <div *ngIf="botonOk">
+    <table class="table table-bordered" *ngIf="posts$| async">
+      <tr>
+        <th>Titulo</th>
+        <th>Cuerpo</th>
+      </tr>
+      <tr *ngFor="let postContent of posts$ | async">
+        <td>{{postContent.title}}</td>
+        <td>{{postContent.body}}</td>
+      </tr>
+    </table>
+</div>

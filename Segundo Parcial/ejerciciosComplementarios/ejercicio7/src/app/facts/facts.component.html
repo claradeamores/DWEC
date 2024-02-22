@@ -1,0 +1,9 @@
+<div class="container w-75 mx-auto mb-3 text-center">
+  <h1>{{titulo}}</h1>
+  <div class="container w-50 mx-auto mb-3" *ngIf="facts$ | async as comentarios">
+    <ul *ngFor="let texto of comentarios">
+      <li class="list-group-item">{{texto.text}}</li>
+    </ul>
+  </div>
+</div>
+

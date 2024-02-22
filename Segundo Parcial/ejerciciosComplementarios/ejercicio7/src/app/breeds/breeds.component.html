@@ -1,0 +1,23 @@
+<div class="container w-75 mx-auto mb-3 text-center">
+  <h1>{{titulo}}</h1>
+  <div class="container w-50 mx-auto mb-3" *ngFor="let gato of (gatos$ | async)?.data">
+    <ul *ngIf="gato.pattern=='All'" class="text-danger mb-2">
+      <li class="list-group-item">
+        <h2>{{gato.breed}}</h2>
+      </li>
+      <li class="list-group-item">{{gato.origin}}</li>
+      <li class="list-group-item">{{gato.country}}</li>
+      <li class="list-group-item">{{gato.coat}}</li>
+      <li class="list-group-item">{{gato.pattern}}</li>
+    </ul>
+    <ul *ngIf="gato.pattern!='All'" class="mb-2 text-success">
+      <li class="list-group-item">
+        <h2>{{gato.breed}}</h2>
+      </li>
+      <li class="list-group-item">{{gato.origin}}</li>
+      <li class="list-group-item">{{gato.country}}</li>
+      <li class="list-group-item">{{gato.coat}}</li>
+      <li class="list-group-item">{{gato.pattern}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container w-25 mx-auto text-center mb-3">
+  <h1 class="mb-2">{{titulo}}</h1>
+  <button class="btn btn-warning" (click)="mostrarReceta()">Ver receta</button>
+</div>
+<div *ngIf="botonOk">
+  <div class="container w-25 mx-auto text-center" *ngIf="recetas$ | async as recetas">
+    <div class="card" *ngFor="let receta of recetas.meals">
+      <img [src]="receta.strMealThumb" class="card-img-top" alt="Imagen receta">
+      <div class="card-body">
+        <h5 class="card-title">{{ receta.strMeal }}</h5>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let ingrediente of getIngredientes(receta)">{{ ingrediente }}</li>
+        </ul>
+        <a href="{{receta.strSource}}">Visitar Receta</a><br><br>
+        <a class="btn btn-success" (click)="mostrarInstrucciones()">Mostrar Instrucciones</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container w-75 mx-auto text-center mt-3" style="border: 1px solid black; border-radius: 15px;"
+  *ngIf="mostrar">
+  <div *ngFor="let alias of (recetas$ | async)?.meals">
+    <h2>Instrucciones:</h2>
+    <p>{{alias.strInstructions}}</p>
+  </div>
+
+</div>

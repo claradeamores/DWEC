@@ -1,0 +1,15 @@
+<div class="container w-50 mx-auto mt-4">
+  <p><strong>Nombre: </strong>{{nombreResumen}}</p>
+  <p><strong>Correo: </strong>{{correoResumen}}</p>
+  <p><strong>Serie sugerida: </strong>{{serieResumen}}</p>
+  <div class="form-group">
+    <label for="valoracion">Valoración</label>
+    <input type="text" class="form-control mb-3" id="valoracion" [(ngModel)]="valoracion">
+  </div>
+  <button class="btn btn-dark" (click)="enviarValoracion()">Enviar valoración</button>
+  <div *ngIf="!botonOk">
+    <div *ngIf="mostrar">
+      <p class="text-danger">Debe introducir una valoración, gracias.</p>
+    </div>
+  </div>
+</div>

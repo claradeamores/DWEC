@@ -1,0 +1,12 @@
+<div class="container w-75 mx-auto" *ngIf="heroes$ | async as super">
+  <h1>{{super.squadName}}</h1>
+  <div *ngFor="let hero of super.members">
+    <h2>Nombre: {{hero.name}}</h2>
+    <p>Identidad secreta: {{hero.secretIdentity}}</p>
+    <p>Edad: {{hero.age}}</p>
+    <p>Superpoderes:</p>
+    <ul>
+      <li *ngFor="let poderes of hero.powers">{{poderes}}</li>
+    </ul>
+  </div>
+</div>

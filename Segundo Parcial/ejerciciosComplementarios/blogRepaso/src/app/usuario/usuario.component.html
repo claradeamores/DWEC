@@ -1,0 +1,21 @@
+<div class="container mx-auto w-75 fs-4 text-center mt-3">
+  <h1>{{titulo}}</h1>
+  <div class="form-group">
+    <label for="usuario">Usuario:</label>
+    <input type="number" class="form-control" id="usuario" placeholder="Nº de usuario" [(ngModel)]="usuarioNum">
+
+    <button class="btn btn-primary fs-4 mt-5" (click)="mostrarUsuario($event)">Enviar</button>
+  </div>
+  <div *ngIf="botonOk">
+  <div *ngIf='usuario$ | async as user'>
+    <p><strong>Nombre: </strong>{{user.name}}</p>
+    <p><strong>Alias: </strong>{{user.username}}</p>
+    <p><strong>Correo: </strong>{{user.email}}</p>
+    <p><strong>Dirección: </strong>{{user.address.suite}}, {{user.address.street}}, {{user.address.zipcode}},
+      {{user.address.city}}</p>
+  </div>
+</div>
+<div *ngIf="!botonOk">
+<h5 class="text-danger">Debe introducir un número entero positivo</h5>
+</div>
+</div>

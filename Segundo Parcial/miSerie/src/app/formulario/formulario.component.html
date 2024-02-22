@@ -1,0 +1,27 @@
+<div class="container w-75 mx-auto mt-3">
+  <h1>Formulario valoración</h1>
+  <label>Serie</label>
+  <input class="input-group-text" type="text" [(ngModel)]="serieForm" />
+  <label>Correo</label>
+  <input class="input-group-text" type="text" [(ngModel)]="correoForm" />
+  <label>Nombre</label>
+  <input class="input-group-text" type="text" [(ngModel)]="nombreForm" />
+  <button (click)="resumenForm()" class="btn btn-primary">Enviar</button>
+  <div *ngIf="botonOk">
+    <div *ngIf="mostrar">
+      <h1>
+        Valoracion: Gracias {{ nombreForm }} por su valoración:
+        {{ valoracionRecibida }}
+      </h1>
+    </div>
+    <app-resumen
+      [serieResumen]="serieForm"
+      [correoResumen]="correoForm"
+      [nombreResumen]="nombreForm"
+      (selected)="mostrarValoracion($event)"
+    ></app-resumen>
+  </div>
+  <div *ngIf="mensajeError">
+    <h1>Por favor, introduce una valoración</h1>
+  </div>
+</div>

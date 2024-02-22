@@ -1,0 +1,16 @@
+<div class="container w-50 mx-auto">
+  <table *ngIf="series$ | async as serie">
+    <tr>
+      <td class="w-50 p-1"><img class="w-100" [src]="serie.image.original" alt=""></td>
+      <td class="w-50 p-1">
+        <h4>{{serie.name}}</h4>
+        <p><strong>Idioma: </strong>{{serie.language}}</p>
+        <p><strong>Género:</strong></p>
+        <ul>
+          <li *ngFor="let genero of serie.genres">{{genero}}</li>
+        </ul>
+        <p [innerHTML]="serie.summary"></p>
+      </td>
+    </tr>
+  </table>
+</div>

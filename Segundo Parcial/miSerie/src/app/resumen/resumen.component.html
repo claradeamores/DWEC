@@ -1,0 +1,18 @@
+<div class="container mx-auto mt-4 w-75">
+<h1>Resumen de la solicitud</h1>
+
+<div><label>Nombre:</label>{{ nombreResumen }}</div>
+
+<div><label>Correo:</label>{{ correoResumen }}</div>
+
+<div><label>Serie sugerida:</label> {{ serieResumen }}</div>
+
+<label>Valoracion</label>
+<input class="input-group-text" type="text" [(ngModel)]="valoracionResumen" />
+<button class="btn btn-success" (click)="enviarValoracion()">
+  Enviar Valoración
+</button>
+
+</div>
+
+

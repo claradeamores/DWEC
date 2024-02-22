@@ -1,0 +1,14 @@
+<div class="container-fluid w-50 mx-auto text-center">
+  <h1>{{ title }}</h1>
+  <div *ngFor="let localizacion of (localizaciones | async)?.results">
+    <ul>
+      <li style="list-style: none;">
+        <h5 class="text-warning">{{ localizacion.name }}</h5>
+        <p><strong>Id: </strong>{{ localizacion.id }}</p>
+        <p><strong>Tipo: </strong>{{ localizacion.type }}</p>
+        <p ><strong>Dimension: </strong>{{ localizacion.dimension}}</p>
+      </li>
+    </ul>
+   </div>
+</div>
+

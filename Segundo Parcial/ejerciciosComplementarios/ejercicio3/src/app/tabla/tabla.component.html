@@ -1,0 +1,22 @@
+<div class="container-fluid mb-5 mx-auto w-75">
+  <table class="table table-bordered text-center d-flex justify-content-center">
+    <tbody>
+      <ng-container *ngIf="(persona$ | async)?.results as personas">
+        <ng-template ngFor let-row [ngForOf]="personas" let-i="index">
+          <tr *ngIf="i % 3 === 0">
+            <td *ngFor="let persona of personas.slice(i, i + 3)">
+              <div class="card" style="width: 18rem;">
+                <img [src]="persona.picture.large" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">{{ persona.name.first }} {{ persona.name.last }}</h5>
+                  <p class="card-text"><strong>Correo: </strong>{{ persona.email }}</p>
+                  <p class="card-text"><strong>Ciudad: </strong>{{ persona.location.city }}</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </ng-template>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

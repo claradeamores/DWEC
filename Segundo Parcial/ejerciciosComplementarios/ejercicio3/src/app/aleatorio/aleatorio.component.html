@@ -1,0 +1,10 @@
+<div class="container-fluid mb-5 mx-auto w-50 text-center">
+  <div class="card" style="width: 18rem;" *ngFor="let persona of (persona$ | async)?.results">
+    <img [src]='persona.picture.large' class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{persona.name.first}} {{persona.name.last}}</h5>
+      <p class="card-text"><strong>Correo: </strong>{{persona.email}}</p>
+      <p class="card-text"><strong>Ciudad: </strong>{{persona.location.city}}</p>
+    </div>
+  </div>
+</div>
